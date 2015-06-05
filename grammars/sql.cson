@@ -1,9 +1,8 @@
 'scopeName': 'source.sql'
-'name': 'SQL'
+'name': 'T-SQL'
 'fileTypes': [
   'ddl'
   'dml'
-  'pgsql'
   'sql'
 ]
 'patterns': [
@@ -97,7 +96,7 @@
         'name': 'constant.numeric.sql'
       '15':
         'name': 'storage.type.sql'
-    'match': '(?xi)\n\n\t\t\t\t# normal stuff, capture 1\n\t\t\t\t \\b(bigint|bigserial|bit|boolean|box|bytea|cidr|circle|date|double\\sprecision|enum|inet|int|integer|line|lseg|macaddr|money|oid|path|point|polygon|real|serial|smallint|sysdate|text)\\b\n\n\t\t\t\t# numeric suffix, capture 2 + 3i\n\t\t\t\t|\\b(bit\\svarying|character\\s(?:varying)?|tinyint|var\\schar|float|interval)\\((\\d+)\\)\n\n\t\t\t\t# optional numeric suffix, capture 4 + 5i\n\t\t\t\t|\\b(char|number|varchar\\d?)\\b(?:\\((\\d+)\\))?\n\n\t\t\t\t# special case, capture 6 + 7i + 8i\n\t\t\t\t|\\b(numeric|decimal)\\b(?:\\((\\d+),(\\d+)\\))?\n\n\t\t\t\t# special case, captures 9, 10i, 11\n\t\t\t\t|\\b(times)(?:\\((\\d+)\\))(\\swithoutstimeszone\\b)?\n\n\t\t\t\t# special case, captures 12, 13, 14i, 15\n\t\t\t\t|\\b(timestamp|time)\\b(?:(s)\\((\\d+)\\)(\\swithoutstimeszone\\b)?)?\n\n\t\t\t'
+    'match': '(?xi)\n\n\t\t\t\t# normal stuff, capture 1\n\t\t\t\t \\b(bigint|bigserial|bit|boolean|box|bytea|cidr|circle|date|double\\sprecision|enum|inet|int|integer|line|lseg|macaddr|money|oid|path|point|polygon|real|serial|smallint|sysdate|text)\\b\n\n\t\t\t\t# numeric suffix, capture 2 + 3i\n\t\t\t\t|\\b(bit\\svarying|character\\s(?:varying)?|tinyint|var\\schar|float|interval)\\((\\d+)\\)\n\n\t\t\t\t# optional numeric suffix, capture 4 + 5i\n\t\t\t\t|\\b(char|number|varchar|nvarchar\\d?)\\b(?:\\((\\d+)\\))?\n\n\t\t\t\t# special case, capture 6 + 7i + 8i\n\t\t\t\t|\\b(numeric|decimal)\\b(?:\\((\\d+),(\\d+)\\))?\n\n\t\t\t\t# special case, captures 9, 10i, 11\n\t\t\t\t|\\b(times)(?:\\((\\d+)\\))(\\swithoutstimeszone\\b)?\n\n\t\t\t\t# special case, captures 12, 13, 14i, 15\n\t\t\t\t|\\b(timestamp|time)\\b(?:(s)\\((\\d+)\\)(\\swithoutstimeszone\\b)?)?\n\n\t\t\t'
   }
   {
     'match': '(?i:\\b((?:primary|foreign)\\s+key|references|on\\sdelete(\\s+cascade)?|check|constraint)\\b)'
@@ -120,7 +119,7 @@
     'name': 'keyword.other.DML.II.sql'
   }
   {
-    'match': '(?i:\\b(begin(\\s+work)?|start\\s+transaction|commit(\\s+work)?|rollback(\\s+work)?)\\b)'
+    'match': '(?i:\\b(begin(\\s+transaction)?|start\\s+transaction|commit(\\s+transaction)?|rollback(\\s+transaction)?)\\b)'
     'name': 'keyword.other.LUW.sql'
   }
   {
@@ -144,7 +143,7 @@
     'name': 'keyword.other.order.sql'
   }
   {
-    'match': '(?i)\\b(case|when|then|else|end)\\b'
+    'match': '(?i)\\b(if|case|when|then|else|end)\\b'
     'name': 'keyword.other.case.sql'
   }
   {
@@ -158,10 +157,6 @@
   {
     'match': '-|\\+|/'
     'name': 'keyword.operator.math.sql'
-  }
-  {
-    'match': '\\|\\|'
-    'name': 'keyword.operator.concatenator.sql'
   }
   {
     'comment': 'List of SQL99 built-in functions from http://www.oreilly.com/catalog/sqlnut/chapter/ch04.html'

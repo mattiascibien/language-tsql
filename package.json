@@ -1,12 +1,12 @@
 {
   "name": "language-tsql",
-  "version": "0.16.0",
-  "description": "Teansact-SQL language support in Atom",
+  "version": "0.0.0",
+  "description": "A customized version of the SQL Package suitable for Transact-SQL",
   "engines": {
     "atom": "*",
     "node": "*"
   },
-  "homepage": "http://atom.github.io/language-tsql",
+  "homepage": "http://mattiascibien.net/language-tsql",
   "repository": {
     "type": "git",
     "url": "https://github.com/mattiascibien/language-tsql.git"

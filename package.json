@@ -1,6 +1,6 @@
 {
   "name": "language-tsql",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A customized version of the SQL Package suitable for Transact-SQL",
   "engines": {
     "atom": "*",
